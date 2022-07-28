@@ -1,6 +1,5 @@
 def bfsearch(tree:dict, start_state: str, goal_state:str) -> list: 
     parent = {} # to track the parent of a node
-    #visited = []
     node_queue = [start_state] # as we know that bfs uses queue structure to expand its child node, level by level.
     while node_queue:
         if node_queue[0] == goal_state:
@@ -16,10 +15,8 @@ def bfsearch(tree:dict, start_state: str, goal_state:str) -> list:
                 for child in tree[node_queue[0]]:
                     parent[child] = node_queue[0] 
                     node_queue.append(child)
-                #visited.append(node_queue[0])
                 node_queue.pop(0)
             else:
-                #visited.append(node_queue[0])
                 node_queue.pop(0)
 
 def print_path(path:list): # for printing the shortest path from start node to goal node
